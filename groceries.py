@@ -1,4 +1,3 @@
-
 # groceries.py
 
 #from pprint import pprint
@@ -38,7 +37,15 @@ print("--------------")
 print("THERE ARE " + str(products_count) + " PRODUCTS:")
 print("--------------")
 
-for p in products:
+def sort_by_name(p):
+    return p["name"]
+
+sorted_products = sorted(products, key=sort_by_name)
+
+
+
+
+for p in sorted_products:
     #price_usd = #p["price"]
     price_usd = " (${0:.2f})".format(p["price"])
     print(" + " + p["name"] + price_usd)
